@@ -37,7 +37,7 @@ print(driver.find_element(By.XPATH, "/html/body").text)
 
 # Username
 element = driver.find_element(By.XPATH, "/html/body/div[1]/main/div[3]/div/form/div[1]/div[2]/div/div/input")  # Replace with the correct XPath
-element.send_keys("sunitha05chegg@gmail.com")
+element.send_keys("srinivasanc0504@gmail.com")
 element.send_keys(Keys.ENTER)
 time.sleep(3)
 
@@ -47,7 +47,7 @@ passw.send_keys("Chegg@050402")
 passw.send_keys(Keys.ENTER)
 time.sleep(3)
 
-telegram_bot_sendtext("Logged GH")
+telegram_bot_sendtext("Logged EC")
 
 # Navigate to the authoring page
 driver.get("https://expert.chegg.com/qna/authoring/answer")
@@ -56,7 +56,7 @@ time.sleep(3)
 i = 1
 while True:
     try:
-        driver.get("https://expert.chegg.com/qna/authoring/myanswers")
+        driver.get("https://expert.chegg.com/qna/authoring/answer")
         time.sleep(8)
         message = driver.find_element(By.XPATH, "/html/body/div[1]/main/div/div/div[2]/div[1]")
         text_to_copy = message.text
