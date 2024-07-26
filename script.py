@@ -62,9 +62,9 @@ while True:
         text_to_copy = message.text
         if text_to_copy == "Thank you for your efforts on Chegg Q&A! Unfortunately, no Qs are available in your queue at the moment.":
             driver.refresh()
-            if i <= 2:
+            if i <= 20000:
                 telegram_bot_sendtext(i)
-            if i % 60 == 0:
+            elif i % 60 == 0:
                 status = f"UP Running...  {i/6} AP"
                 telegram_bot_sendtext(status)
             i += 1
