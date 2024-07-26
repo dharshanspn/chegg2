@@ -33,7 +33,7 @@ driver = webdriver.Chrome(options=options)
 driver.get("https://expert.chegg.com/auth")
 time.sleep(3)
 
-print(driver.find_element(By.XPATH, "/html/body").text)
+#print(driver.find_element(By.XPATH, "/html/body").text)
 
 # Username
 element = driver.find_element(By.XPATH, "/html/body/div[1]/main/div[3]/div/form/div[1]/div[2]/div/div/input")  # Replace with the correct XPath
@@ -62,16 +62,16 @@ while True:
         text_to_copy = message.text
         if text_to_copy == "Thank you for your efforts on Chegg Q&A! Unfortunately, no Qs are available in your queue at the moment.":
             driver.refresh()
-            if i <= 20000:
+            if i <= 1:
                 telegram_bot_sendtext(i)
-            elif i % 60 == 0:
-                status = f"UP Running...  {i/6} AP"
+            elif i % 100 == 0:
+                status = f"UP Running...  {i/10} EC"
                 telegram_bot_sendtext(status)
             i += 1
         else:
-            telegram_bot_sendques("AP")
+            telegram_bot_sendques("EC")
             time.sleep(660)
     except Exception as e:
-        telegram_bot_sendtext("An error occurred AP")
+        telegram_bot_sendtext("An error occurred EC")
 # Quit the WebDriver
 driver.quit()
