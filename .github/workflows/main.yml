@@ -3,7 +3,7 @@ name: Run Python Script with Selenium
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # This will run the script every 15 minutes
+    - cron: '*/3600 * * * *'  # This will run the script every 15 minutes
   workflow_dispatch:  # Allows manual trigger of the workflow
 
 jobs:
