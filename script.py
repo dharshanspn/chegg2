@@ -56,7 +56,7 @@ time.sleep(3)
 i = 1
 while True:
     try:
-        driver.get("https://expert.chegg.com/qna/authoring/answer")
+        driver.get("https://expert.chegg.com/qna/authoring/myanswers")
         time.sleep(8)
         message = driver.find_element(By.XPATH, "/html/body/div[1]/main/div/div/div[2]/div[1]")
         text_to_copy = message.text
