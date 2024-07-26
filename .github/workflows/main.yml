@@ -30,8 +30,8 @@ jobs:
     - name: Install Google Chrome version 114
       run: |
         # Download the specific version of Google Chrome
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo dpkg -i google-chrome-stable_current_amd64.deb
+        wget https://storage.googleapis.com/downloads.chromium.org/chromium-browser/chromium-browser_114.0.5735.90_amd64.deb
+        sudo dpkg -i chromium-browser_114.0.5735.90_amd64.deb
         sudo apt-get -f install -y  # Fix missing dependencies
 
     - name: Install ChromeDriver version 114
