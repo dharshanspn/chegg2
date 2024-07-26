@@ -21,7 +21,6 @@ def telegram_bot_sendtext(bot_message):
     response = requests.get(send_text)
     return response.json()
 
-telegram_bot_sendtext("Started AP")
 
 # Set up the Chrome WebDriver
 options = webdriver.ChromeOptions()
@@ -38,7 +37,7 @@ print(driver.find_element(By.XPATH, "/html/body").text)
 
 # Username
 element = driver.find_element(By.XPATH, "/html/body/div[1]/main/div[3]/div/form/div[1]/div[2]/div/div/input")  # Replace with the correct XPath
-element.send_keys("ameerabbaschegg05@proton.me")
+element.send_keys("sunitha05chegg@gmail.com")
 element.send_keys(Keys.ENTER)
 time.sleep(3)
 
@@ -48,7 +47,7 @@ passw.send_keys("Chegg@050402")
 passw.send_keys(Keys.ENTER)
 time.sleep(3)
 
-telegram_bot_sendtext("Logged AP")
+telegram_bot_sendtext("Logged GH")
 
 # Navigate to the authoring page
 driver.get("https://expert.chegg.com/qna/authoring/answer")
