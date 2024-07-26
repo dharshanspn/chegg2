@@ -37,17 +37,17 @@ time.sleep(3)
 
 # Username
 element = driver.find_element(By.XPATH, "/html/body/div[1]/main/div[3]/div/form/div[1]/div[2]/div/div/input")  # Replace with the correct XPath
-element.send_keys("srinivasanc0504@gmail.com")
+element.send_keys("nirupeshcs@icloud.com")
 element.send_keys(Keys.ENTER)
 time.sleep(3)
 
 # Password
 passw = driver.find_element(By.XPATH, "/html/body/div[1]/main/div[3]/div/form/div[1]/div[2]/div[2]/div/div/input")  # Replace with the correct XPath
-passw.send_keys("Chegg@050402")
+passw.send_keys("#Hitlin3945")
 passw.send_keys(Keys.ENTER)
 time.sleep(3)
 
-telegram_bot_sendtext("Logged EC")
+telegram_bot_sendtext("Logged CSN")
 
 # Navigate to the authoring page
 driver.get("https://expert.chegg.com/qna/authoring/answer")
@@ -65,13 +65,13 @@ while True:
             if i <= 1:
                 telegram_bot_sendtext(i)
             elif i % 100 == 0:
-                status = f"UP Running...  {i/10} EC"
+                status = f"UP Running...  {i/10} CSN"
                 telegram_bot_sendtext(status)
             i += 1
         else:
-            telegram_bot_sendques("EC")
+            telegram_bot_sendques("CSN")
             time.sleep(660)
     except Exception as e:
-        telegram_bot_sendtext("An error occurred EC")
+        telegram_bot_sendtext("An error occurred CSN")
 # Quit the WebDriver
 driver.quit()
