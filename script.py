@@ -62,7 +62,7 @@ while True:
         time.sleep(3)
         limit = driver.current_url
         limit_text = f"{limit}"
-        if limit_text != "https://expert.chegg.com/qna/authoring/myanswers":
+        if limit_text != "https://expert.chegg.com/qna/authoring/answer":
            telegram_bot_sendtext("Limit EC")
            # Define the time zone (UTC+5:30)
            tz = pytz.timezone('Asia/Kolkata')
@@ -95,7 +95,7 @@ while True:
             i += 1
         else:
             telegram_bot_sendques("CSN")
-            time.sleep(660)
+            time.sleep(720)
     except Exception as e:
         telegram_bot_sendtext("An error occurred CSN")
 # Quit the WebDriver
