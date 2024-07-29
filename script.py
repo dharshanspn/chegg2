@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
+from datetime import datetime, timedelta
+import pytz
 import requests
 
 # Define functions to send messages via Telegram
@@ -57,7 +59,30 @@ i = 1
 while True:
     try:
         driver.get("https://expert.chegg.com/qna/authoring/answer")
-        time.sleep(8)
+        time.sleep(3)
+        limit = driver.current_url
+        limit_text = f"{limit}"
+        if limit_text != "https://expert.chegg.com/qna/authoring/myanswers":
+           telegram_bot_sendtext("Limit EC")
+           # Define the time zone (UTC+5:30)
+           tz = pytz.timezone('Asia/Kolkata')
+
+           # Get the current time in UTC+5:30
+           now = datetime.now(tz)
+
+           # Define the target time (12:30 PM)
+           target_time = now.replace(hour=12, minute=30, second=0, microsecond=0)
+  
+           # If the current time is already past 12:30 PM, set the target time to the next day
+           if now > target_time:
+               target_time += timedelta(days=1)
+
+           # Calculate the difference in seconds
+           n = (target_time - now).total_seconds()
+           telegram_bot_sendques("LIMIT CSN")
+           time.sleep(n)
+        driver.get("https://expert.chegg.com/qna/authoring/answer")
+        time.sleep(5)
         message = driver.find_element(By.XPATH, "/html/body/div[1]/main/div/div/div[2]/div[1]")
         text_to_copy = message.text
         if text_to_copy == "Thank you for your efforts on Chegg Q&A! Unfortunately, no Qs are available in your queue at the moment.":
