@@ -2,10 +2,11 @@
 name: Run Python Script with Selenium
 
 on:
-  schedule:
+  workflow_dispatch
+  #schedule:
     # Run the workflow every 6 hours
-    - cron: "0 */6 * * *"
-
+    #- cron: "0 */6 * * *"
+    
 jobs:
   my_job:
     runs-on: ubuntu-latest
